@@ -33,8 +33,7 @@ outfile = open('output', 'w')
 if len(sys.argv) > 1:
     benchtypes = sys.argv[1:]
 else:
-    benchtypes = ('sequential', 'sequentialread', 
-                  'randomshufflerange', 'randomshufflerangeread',
+    benchtypes = (
                   'randomfull', 'randomfullread', 'randomfullreadmiss',
                   'iteration', 'delete', 
                   'insertsmallstring', 'readsmallstring', 'readsmallstringmiss', 'deletesmallstring', 

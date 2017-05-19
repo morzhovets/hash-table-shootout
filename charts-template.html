@@ -110,10 +110,6 @@
     }
 
     $(function () {
-        plot_chart(chart_data['sequential-runtime'], '#sequential-runtime', '#sequential-runtime-choices', runtime_settings);
-        plot_chart(chart_data['sequentialread-runtime'], '#sequentialread-runtime', '#sequentialread-runtime-choices', runtime_settings);
-        plot_chart(chart_data['randomshufflerange-runtime'], '#randomshufflerange-runtime', '#randomshufflerange-runtime-choices', runtime_settings);
-        plot_chart(chart_data['randomshufflerangeread-runtime'], '#randomshufflerangeread-runtime', '#randomshufflerangeread-runtime-choices', runtime_settings);
         plot_chart(chart_data['randomfull-runtime'], '#randomfull-runtime', '#randomfull-runtime-choices', runtime_settings);
         plot_chart(chart_data['randomfullread-runtime'], '#randomfullread-runtime', '#randomfullread-runtime-choices', runtime_settings);
         plot_chart(chart_data['randomfullreadmiss-runtime'], '#randomfullreadmiss-runtime', '#randomfullreadmiss-runtime-choices', runtime_settings);
@@ -169,44 +165,16 @@
 
 <div class="global">
 
-<h3>Sequential inserts: execution time (integers)</h3>
-<div class="chart" id="sequential-runtime"></div>
-<div class="xaxis-title">number of entries in hash table</div>
-<ul class="choices" id="sequential-runtime-choices"></ul>
-<div class="chart-after-space"></div>
-
-<h3>Random shuffle inserts: execution time (integers)</h3>
-<div class="chart" id="randomshufflerange-runtime"></div>
-<div class="xaxis-title">number of entries in hash table</div>
-<ul class="choices" id="randomshufflerange-runtime-choices"></ul>
-<div class="chart-after-space"></div>
-
 <h3>Random full inserts: execution time (integers)</h3>
 <div class="chart" id="randomfull-runtime"></div>
 <div class="xaxis-title">number of entries in hash table</div>
 <ul class="choices" id="randomfull-runtime-choices"></ul>
 <div class="chart-after-space"></div>
 
-
-
 <h3>Deletes: execution time (integers)</h3>
 <div class="chart" id="delete-runtime"></div>
 <div class="xaxis-title">number of entries in hash table</div>
 <ul class="choices" id="delete-runtime-choices"></ul>
-<div class="chart-after-space"></div>
-
-
-
-<h3>Sequential reads: execution time (integers)</h3>
-<div class="chart" id="sequentialread-runtime"></div>
-<div class="xaxis-title">number of entries in hash table</div>
-<ul class="choices" id="sequentialread-runtime-choices"></ul>
-<div class="chart-after-space"></div>
-
-<h3>Random shuffle reads: execution time (integers)</h3>
-<div class="chart" id="randomshufflerangeread-runtime"></div>
-<div class="xaxis-title">number of entries in hash table</div>
-<ul class="choices" id="randomshufflerangeread-runtime-choices"></ul>
 <div class="chart-after-space"></div>
 
 <h3>Random full reads: execution time (integers)</h3>
@@ -227,19 +195,11 @@
 <ul class="choices" id="iteration-runtime-choices"></ul>
 <div class="chart-after-space"></div>
 
-
-
-
 <h3>Memory usage of random full inserts (integers)</h3>
 <div class="chart" id="randomfull-memory"></div>
 <div class="xaxis-title">number of entries in hash table</div>
 <ul class="choices" id="randomfull-memory-choices"></ul>
 <div class="chart-after-space"></div>
-
-
-
-
-
 
 <h3>Inserts: execution time (small strings)</h3>
 <div class="chart" id="insertsmallstring-runtime"></div>
@@ -270,8 +230,6 @@
 <div class="xaxis-title">number of entries in hash table</div>
 <ul class="choices" id="insertsmallstring-memory-choices"></ul>
 <div class="chart-after-space"></div>
-
-
 
 <h3>Inserts: execution time (strings)</h3>
 <div class="chart" id="insertstring-runtime"></div>

@@ -72,57 +72,7 @@ int main(int argc, char ** argv)
 
     double before = get_time();
 
-    if(test_type == "sequential")
-    {
-        for(int64_t i = 0; i < num_keys; i++) 
-        {
-            INSERT_INT_INTO_HASH(i, value);
-        }
-    }
-
-    else if(test_type == "sequentialread")
-    {
-        for(int64_t i = 0; i < num_keys; i++) 
-        {
-            INSERT_INT_INTO_HASH(i, value);
-        }
-        
-        before = get_time();
-        for(int64_t i = 0; i < num_keys; i++) 
-        {
-            FIND_INT_EXISTING_FROM_HASH(i);
-        }
-    }
-
-    else if(test_type == "randomshufflerange")
-    {
-        const std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
-        before = get_time();
-        
-        for(int64_t i = 0; i < num_keys; i++) 
-        {
-            INSERT_INT_INTO_HASH(keys[i], value);
-        }
-    }
-
-    else if(test_type == "randomshufflerangeread")
-    {
-        std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
-        for(int64_t i = 0; i < num_keys; i++) 
-        {
-            INSERT_INT_INTO_HASH(keys[i], value);
-        }
-        
-        std::shuffle(keys.begin(), keys.end(), generator);
-        
-        before = get_time();
-        for(int64_t i = 0; i < num_keys; i++) 
-        {
-            FIND_INT_EXISTING_FROM_HASH(keys[i]);
-        }
-    }
-
-    else if(test_type == "randomfull")
+    if(test_type == "randomfull")
     {
         const std::vector<int64_t> keys = get_random_full_ints(num_keys);
         before = get_time();
