@@ -14,9 +14,9 @@ programs = [
     'rabbit_sparse_unordered_map',
 ]
 
-minkeys  =  2*1000*1000
-maxkeys  = 40*1000*1000
-interval =  2*1000*1000
+minkeys  =  4*1000*1000
+maxkeys  = 32*1000*1000
+interval =  4*1000*1000
 best_out_of = 2
 
 # for the final run, use this:
