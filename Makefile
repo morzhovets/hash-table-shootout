@@ -10,10 +10,10 @@ build/stl_unordered_map: src/stl_unordered_map.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/stl_unordered_map src/stl_unordered_map.cc
 
 build/google_sparse_hash_map: src/google_sparse_hash_map.cc Makefile src/template.c
-	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/google_sparse_hash_map src/google_sparse_hash_map.cc
+	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc -lm -o build/google_sparse_hash_map src/google_sparse_hash_map.cc
 
 build/google_dense_hash_map: src/google_dense_hash_map.cc Makefile src/template.c
-	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/google_dense_hash_map src/google_dense_hash_map.cc
+	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc -lm -o build/google_dense_hash_map src/google_dense_hash_map.cc
 
 build/qt_qhash: src/qt_qhash.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm `pkg-config --cflags --libs QtCore` -o build/qt_qhash src/qt_qhash.cc

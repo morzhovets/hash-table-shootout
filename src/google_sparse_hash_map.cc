@@ -1,5 +1,5 @@
 #include <inttypes.h>
-#include <google/sparse_hash_map>
+#include <sparsehash/sparse_hash_map>
 #include <string>
 
 typedef google::sparse_hash_map<int64_t, int64_t, std::hash<int64_t>> hash_t;

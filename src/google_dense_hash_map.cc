@@ -1,5 +1,5 @@
 #include <inttypes.h>
-#include <google/dense_hash_map>
+#include <sparsehash/dense_hash_map>
 #include <string>
 
 typedef google::dense_hash_map<int64_t, int64_t, std::hash<int64_t>> hash_t;
