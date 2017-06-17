@@ -43,14 +43,9 @@ program_slugs = [
     'google_sparse_hash_map',
     'google_dense_hash_map',
     'stl_unordered_map',
-    'boost_unordered_map',
     'qt_qhash',
     'hopscotch_map',
     'spp_sparse_hash_map',
-    'sherwood_map',
-    'emilib_hash_map',
-    'rabbit_unordered_map',
-    'rabbit_sparse_unordered_map',
 ]
 
 chart_data = {}
