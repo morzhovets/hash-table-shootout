@@ -14,10 +14,10 @@ programs = [
     'rabbit_sparse_unordered_map',
 ]
 
-minkeys  =  4*1000*1000
-maxkeys  = 32*1000*1000
-interval =  4*1000*1000
-best_out_of = 2
+minkeys  =  5*1000*1000
+maxkeys  = 16*1000*1000
+interval =  1*1000*1000
+best_out_of = 3
 
 # for the final run, use this:
 #minkeys  =  2*1000*1000
