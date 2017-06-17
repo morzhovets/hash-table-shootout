@@ -37,20 +37,6 @@ for line in lines:
     if benchtype in ('randomfull', 'insertstring', 'insertsmallstring'):
         by_benchtype.setdefault("%s-memory"  % benchtype, {}).setdefault(program, []).append([nkeys, nbytes])
 
-proper_names = {
-    'boost_unordered_map': 'Boost unordered_map',
-    'stl_unordered_map': 'GCC std::unordered_map',
-    'google_sparse_hash_map': 'Google sparsehash sparse_hash_map',
-    'google_dense_hash_map': 'Google sparsehash dense_hash_map',
-    'qt_qhash': 'Qt QHash',
-    'hopscotch_map': 'Hopscotch map',
-    'spp_sparse_hash_map': 'Sparse hash map',
-    'sherwood_map': 'Sherwood map',
-    'emilib_hash_map': 'Emilib hash map',
-    'rabbit_unordered_map': 'Rabbit unordered map',
-    'rabbit_sparse_unordered_map': 'Rabbit sparse unordered map',
-}
-
 # do them in the desired order to make the legend not overlap the chart data
 # too much
 program_slugs = [
@@ -74,7 +60,7 @@ for i, (benchtype, programs) in enumerate(by_benchtype.items()):
     for j, program in enumerate(program_slugs):
         data = programs[program]
         chart_data[benchtype].append({
-            'label': proper_names[program],
+            'label': program,
             'data': [],
         })
 
