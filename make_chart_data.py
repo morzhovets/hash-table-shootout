@@ -46,6 +46,8 @@ program_slugs = [
     'qt_qhash',
     'hopscotch_map',
     'spp_sparse_hash_map',
+    'momo_unordered_map',
+    'momo_unordered_map_open',
 ]
 
 chart_data = {}

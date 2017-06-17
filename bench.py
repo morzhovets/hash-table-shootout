@@ -7,6 +7,8 @@ programs = [
     'qt_qhash',
     'spp_sparse_hash_map',
     'hopscotch_map',
+    'momo_unordered_map',
+    'momo_unordered_map_open',
 ]
 
 minkeys  =  5*1000*1000
