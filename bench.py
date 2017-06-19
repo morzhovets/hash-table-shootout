@@ -1,10 +1,10 @@
 import sys, os, subprocess, signal
 
 programs = [
-    'stl_unordered_map',
-    'google_sparse_hash_map',
+    'std_unordered_map',
+#    'google_sparse_hash_map',
     'google_dense_hash_map',
-    'qt_qhash',
+#    'qt_qhash',
     'spp_sparse_hash_map',
     'hopscotch_map',
     'momo_unordered_map',

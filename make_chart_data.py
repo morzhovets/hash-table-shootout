@@ -40,12 +40,12 @@ for line in lines:
 # do them in the desired order to make the legend not overlap the chart data
 # too much
 program_slugs = [
-    'google_sparse_hash_map',
+    'std_unordered_map',
+#    'google_sparse_hash_map',
     'google_dense_hash_map',
-    'stl_unordered_map',
-    'qt_qhash',
-    'hopscotch_map',
+#    'qt_qhash',
     'spp_sparse_hash_map',
+    'hopscotch_map',
     'momo_unordered_map',
     'momo_unordered_map_open',
 ]

@@ -1,4 +1,4 @@
-all: build/momo_unordered_map build/momo_unordered_map_open build/stl_unordered_map build/google_sparse_hash_map build/google_dense_hash_map build/qt_qhash build/spp_sparse_hash_map
+all: build/momo_unordered_map build/momo_unordered_map_open build/std_unordered_map build/google_dense_hash_map build/spp_sparse_hash_map build/hopscotch_map
 
 build/momo_unordered_map: src/momo_unordered_map.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/momo_unordered_map src/momo_unordered_map.cc
@@ -6,8 +6,8 @@ build/momo_unordered_map: src/momo_unordered_map.cc Makefile src/template.c
 build/momo_unordered_map_open: src/momo_unordered_map_open.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/momo_unordered_map_open src/momo_unordered_map_open.cc
 
-build/stl_unordered_map: src/stl_unordered_map.cc Makefile src/template.c
-	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/stl_unordered_map src/stl_unordered_map.cc
+build/std_unordered_map: src/std_unordered_map.cc Makefile src/template.c
+	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/std_unordered_map src/std_unordered_map.cc
 
 build/google_sparse_hash_map: src/google_sparse_hash_map.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc -lm -o build/google_sparse_hash_map src/google_sparse_hash_map.cc
