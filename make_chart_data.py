@@ -48,6 +48,7 @@ program_slugs = [
     'tsl_hopscotch_map',
     'momo_unordered_map',
     'momo_unordered_map_open',
+    'std_unordered_map_momo_pool',
 ]
 
 chart_data = {}
