@@ -1,4 +1,4 @@
-all: build/momo_unordered_map build/momo_unordered_map_open build/std_unordered_map build/google_dense_hash_map build/spp_sparse_hash_map build/hopscotch_map
+all: build/momo_unordered_map build/momo_unordered_map_open build/std_unordered_map build/google_dense_hash_map build/spp_sparse_hash_map build/tsl_hopscotch_map
 
 build/momo_unordered_map: src/momo_unordered_map.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm -o build/momo_unordered_map src/momo_unordered_map.cc
@@ -21,5 +21,5 @@ build/qt_qhash: src/qt_qhash.cc Makefile src/template.c
 build/spp_sparse_hash_map: src/spp_sparse_hash_map.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc/sparsepp -o build/spp_sparse_hash_map src/spp_sparse_hash_map.cc
 
-build/hopscotch_map: src/hopscotch_map.cc Makefile src/template.c
-	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc/hopscotch_map -o build/hopscotch_map src/hopscotch_map.cc
+build/tsl_hopscotch_map: src/tsl_hopscotch_map.cc Makefile src/template.c
+	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc/hopscotch_map -o build/tsl_hopscotch_map src/tsl_hopscotch_map.cc
