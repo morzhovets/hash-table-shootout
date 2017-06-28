@@ -22,7 +22,8 @@ build/qt_qhash: src/qt_qhash.cc Makefile src/template.c
 	g++ -O3 -march=native -std=c++11 -DNDEBUG -lm `pkg-config --cflags --libs QtCore` -o build/qt_qhash src/qt_qhash.cc
 
 build/spp_sparse_hash_map: src/spp_sparse_hash_map.cc Makefile src/template.c
-	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc/sparsepp -o build/spp_sparse_hash_map src/spp_sparse_hash_map.cc
+	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc -o build/spp_sparse_hash_map src/spp_sparse_hash_map.cc
 
 build/tsl_hopscotch_map: src/tsl_hopscotch_map.cc Makefile src/template.c
-	g++ -O3 -march=native -std=c++11 -DNDEBUG -Isrc/hopscotch_map -o build/tsl_hopscotch_map src/tsl_hopscotch_map.cc
+	g++ -O3 -march=native -std=c++11 -DNDEBUG -o build/tsl_hopscotch_map src/tsl_hopscotch_map.cc
+
