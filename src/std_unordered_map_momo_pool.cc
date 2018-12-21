@@ -4,9 +4,9 @@
 #include "momo/stdish/pool_allocator.h"
 
 typedef std::unordered_map<int64_t, int64_t, std::hash<int64_t>, std::equal_to<int64_t>,
-  momo::stdish::pool_allocator<std::pair<int64_t, int64_t>>> hash_t;
+  momo::stdish::unsynchronized_pool_allocator<std::pair<int64_t, int64_t>>> hash_t;
 typedef std::unordered_map<std::string, int64_t, std::hash<std::string>, std::equal_to<std::string>,
-  momo::stdish::pool_allocator<std::pair<std::string, int64_t>>> str_hash_t;
+  momo::stdish::unsynchronized_pool_allocator<std::pair<std::string, int64_t>>> str_hash_t;
 
 #define SETUP hash_t hash; str_hash_t str_hash;
 
