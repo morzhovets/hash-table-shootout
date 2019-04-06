@@ -233,7 +233,7 @@ int main(int argc, char ** argv)
     else if(test_type == "deletesmallstring")
     {
 #ifdef DELETE_STR
-        std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys*2);        
+        std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
