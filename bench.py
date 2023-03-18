@@ -22,7 +22,7 @@ best_out_of = 2
 # and shut down to the console
 # and swapoff any swap files/partitions
 
-outfile = open('output', 'w')
+#outfile = open('output', 'w')
 
 if len(sys.argv) > 1:
     benchtypes = sys.argv[1:]
@@ -65,7 +65,7 @@ for benchtype in benchtypes:
                         fastest_attempt_data = line
 
             if fastest_attempt != 1000000:
-                print >> outfile, fastest_attempt_data
+#                print >> outfile, fastest_attempt_data
                 print(fastest_attempt_data)
 
         nkeys += interval
