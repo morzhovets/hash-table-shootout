@@ -1,15 +1,8 @@
 import sys, os, subprocess, signal
 
 programs = [
-    'std_unordered_map',
-#    'google_sparse_hash_map',
-    'google_dense_hash_map',
-#    'qt_qhash',
-    'spp_sparse_hash_map',
-    'tsl_hopscotch_map',
     'momo_unordered_map',
     'momo_unordered_map_open',
-    'std_unordered_map_momo_pool',
 ]
 
 minkeys  =  5*1000*1000
