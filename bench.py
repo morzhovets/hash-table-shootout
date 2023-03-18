@@ -1,14 +1,17 @@
 import sys, os, subprocess, signal
 
 programs = [
-    'momo_unordered_map',
+#    'momo_unordered_map',
+    'momo_unordered_map_open',
+    'momo_unordered_map_open',
+    'momo_unordered_map_open',
     'momo_unordered_map_open',
 ]
 
 minkeys  =  5*1000*1000
 maxkeys  = 16*1000*1000
 interval =  1*1000*1000
-best_out_of = 3
+best_out_of = 2
 
 # for the final run, use this:
 #minkeys  =  2*1000*1000
@@ -27,8 +30,8 @@ else:
     benchtypes = (
                   'randomfull', 'randomfullread', 'randomfullreadmiss',
                   'iteration', 'delete', 
-                  'insertsmallstring', 'readsmallstring', 'readsmallstringmiss', 'deletesmallstring', 
-                  'insertstring', 'readstring', 'readstringmiss', 'deletestring',
+#                  'insertsmallstring', 'readsmallstring', 'readsmallstringmiss', 'deletesmallstring', 
+#                  'insertstring', 'readstring', 'readstringmiss', 'deletestring',
                   )
 
 for benchtype in benchtypes:
