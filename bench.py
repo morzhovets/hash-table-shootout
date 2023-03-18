@@ -66,6 +66,6 @@ for benchtype in benchtypes:
 
             if fastest_attempt != 1000000:
                 print >> outfile, fastest_attempt_data
-                print fastest_attempt_data
+                print(fastest_attempt_data)
 
         nkeys += interval
