@@ -4,25 +4,12 @@ programs = [
 #    'momo_unordered_map',
     'momo_unordered_map_open',
     'momo_unordered_map_open',
-    'momo_unordered_map_open',
-    'momo_unordered_map_open',
 ]
 
 minkeys  =  5*1000*1000
-maxkeys  = 16*1000*1000
+maxkeys  =  9*1000*1000
 interval =  1*1000*1000
 best_out_of = 4
-
-# for the final run, use this:
-#minkeys  =  2*1000*1000
-#maxkeys  = 40*1000*1000
-#interval =  2*1000*1000
-#best_out_of = 3
-# and use nice/ionice
-# and shut down to the console
-# and swapoff any swap files/partitions
-
-#outfile = open('output', 'w')
 
 if len(sys.argv) > 1:
     benchtypes = sys.argv[1:]
@@ -65,7 +52,6 @@ for benchtype in benchtypes:
                         fastest_attempt_data = line
 
             if fastest_attempt != 1000000:
-#                print >> outfile, fastest_attempt_data
                 print(fastest_attempt_data, flush=True)
 
         nkeys += interval
