@@ -1,9 +1,8 @@
 import sys, os, subprocess, signal
 
 programs = [
-#    'momo_unordered_map',
-    'momo_unordered_map_open',
-    'momo_unordered_map_open',
+    'momo_unordered_map_open_stable',
+    'momo_unordered_map_open_current',
 ]
 
 minkeys  =  5*1000*1000
@@ -17,7 +16,7 @@ else:
     benchtypes = (
                   'randomfull', 'randomfullread', 'randomfullreadmiss',
                   'iteration', 'delete', 
-#                  'insertsmallstring', 'readsmallstring', 'readsmallstringmiss', 'deletesmallstring', 
+                  'insertsmallstring', 'readsmallstring', 'readsmallstringmiss', 'deletesmallstring', 
 #                  'insertstring', 'readstring', 'readstringmiss', 'deletestring',
                   )
 
