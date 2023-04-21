@@ -1,11 +1,10 @@
 import sys, os, subprocess, signal
 
 programs = [
-    'momo_map_v24',
     'momo_map_v32',
     'momo_map_v35',
     'momo_map_v37',
-    'momo_map_v40',
+    'momo_map_cur',
 ]
 
 minkeys  =  1*1000*1000
