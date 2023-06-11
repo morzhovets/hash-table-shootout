@@ -25,6 +25,8 @@ else:
 for benchtype in benchtypes:
     nkeys = minkeys
     while nkeys <= maxkeys:
+        print()
+
         for program in programs:
             fastest_attempt = 1000000
             fastest_attempt_data = ''
