@@ -1,10 +1,10 @@
 import sys, os, subprocess, signal
 
 programs = [
-    'momo_data_table_static_v32',
-    'momo_data_table_static_v35',
-    'momo_data_table_static_v37',
-    'momo_data_table_static_cur',
+    'momo_data_table_static_1',
+    'momo_data_table_static_2',
+    'momo_data_table_static_3',
+    'momo_data_table_static_0',
 ]
 
 minkeys  =  5*1000*1000
