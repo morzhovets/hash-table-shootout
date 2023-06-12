@@ -25,13 +25,10 @@ else:
 for benchtype in benchtypes:
     nkeys = minkeys
     while nkeys <= maxkeys:
-        print(flush=True)
+        dict = {}
 
-        for program in programs:
-            fastest_attempt = 1000000
-            fastest_attempt_data = ''
-
-            for attempt in range(best_out_of):
+        for attempt in range(best_out_of):
+            for program in programs:
                 proc = subprocess.Popen(['./build/'+program, str(nkeys), benchtype], stdout=subprocess.PIPE)
 
                 # wait for the program to fill up memory and spit out its "ready" message
@@ -50,11 +47,12 @@ for benchtype in benchtypes:
                 if nbytes and runtime: # otherwise it crashed
                     line = ','.join(map(str, [benchtype, nkeys, program, nbytes, "%0.6f" % runtime]))
 
-                    if runtime < fastest_attempt:
-                        fastest_attempt = runtime
-                        fastest_attempt_data = line
+                    if program not in dict or runtime < dict[program][0]:
+                        dict[program] = (runtime, line)
 
-            if fastest_attempt != 1000000:
-                print(fastest_attempt_data, flush=True)
+        for program in programs:
+            if program in dict:
+                print(dict[program][1])
+        print(flush=True)
 
         nkeys += interval
