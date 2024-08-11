@@ -4,6 +4,7 @@ programs = [
     'momo_unordered_map_open_1',
     'momo_unordered_map_open_2',
     'momo_unordered_map_open_3',
+    'momo_unordered_map_open_4',
     'momo_unordered_map_open_0',
 ]
 

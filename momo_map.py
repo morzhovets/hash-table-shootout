@@ -4,6 +4,7 @@ programs = [
     'momo_map_1',
     'momo_map_2',
     'momo_map_3',
+    'momo_map_4',
     'momo_map_0',
 ]
 

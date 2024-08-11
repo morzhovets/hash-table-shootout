@@ -4,6 +4,7 @@ programs = [
     'momo_data_table_static_1',
     'momo_data_table_static_2',
     'momo_data_table_static_3',
+    'momo_data_table_static_4',
     'momo_data_table_static_0',
 ]
 
