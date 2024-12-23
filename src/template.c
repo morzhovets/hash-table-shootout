@@ -10,43 +10,12 @@
 #include <algorithm>
 #include <random>
 
-#if !defined(INSERT_INT) && defined(INSERT_INT_INTO_HASH)
-#define INSERT_INT INSERT_INT_INTO_HASH
+#if !defined(RESERVE_INT)
+# define RESERVE_INT(size)
 #endif
 
-#if !defined(DELETE_INT) && defined(DELETE_INT_FROM_HASH)
-#define DELETE_INT DELETE_INT_FROM_HASH
-#endif
-
-#if !defined(FIND_INT_EXISTING) && defined(FIND_INT_EXISTING_FROM_HASH)
-#define FIND_INT_EXISTING FIND_INT_EXISTING_FROM_HASH
-#endif
-
-#if !defined(FIND_INT_MISSING) && defined(FIND_INT_MISSING_FROM_HASH)
-#define FIND_INT_MISSING FIND_INT_MISSING_FROM_HASH
-#endif
-
-#if !defined(CHECK_INT_VALUES) && defined(CHECK_INT_ITERATOR_VALUE)
-#define CHECK_INT_VALUES(value) \
-    using std::begin; using std::end; \
-    for(auto it = begin(hash), end_it = end(hash); it != end_it; ++it) \
-        CHECK_INT_ITERATOR_VALUE(it, value);
-#endif
-
-#if !defined(INSERT_STR) && defined(INSERT_STR_INTO_HASH)
-#define INSERT_STR INSERT_STR_INTO_HASH
-#endif
-
-#if !defined(DELETE_STR) && defined(DELETE_STR_FROM_HASH)
-#define DELETE_STR DELETE_STR_FROM_HASH
-#endif
-
-#if !defined(FIND_STR_EXISTING) && defined(FIND_STR_EXISTING_FROM_HASH)
-#define FIND_STR_EXISTING FIND_STR_EXISTING_FROM_HASH
-#endif
-
-#if !defined(FIND_STR_MISSING) && defined(FIND_STR_MISSING_FROM_HASH)
-#define FIND_STR_MISSING FIND_STR_MISSING_FROM_HASH
+#if !defined(RESERVE_STR)
+# define RESERVE_STR(size)
 #endif
 
 static const int64_t SEED = 0;
@@ -105,7 +74,8 @@ int main(int argc, char ** argv)
     const std::string test_type = argv[2];
     const int64_t value = 1;
 
-    SETUP
+    SETUP_INT;
+    SETUP_STR;
 
     double before = get_time();
 
@@ -123,6 +93,7 @@ int main(int argc, char ** argv)
     else if(test_type == "find_existing_int")
     {
         std::vector<int64_t> keys = get_random_full_ints(num_keys);
+		RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys[i], value);
@@ -143,6 +114,7 @@ int main(int argc, char ** argv)
         std::vector<int64_t> keys_insert = get_random_full_ints(num_keys, 0, std::numeric_limits<int64_t>::max());
         std::vector<int64_t> keys_read = get_random_full_ints(num_keys, std::numeric_limits<int64_t>::min(), -3);
         
+		RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys_insert[i], value);
@@ -160,6 +132,7 @@ int main(int argc, char ** argv)
     {
 #ifdef DELETE_INT
         std::vector<int64_t> keys = get_random_full_ints(num_keys);
+		RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys[i], value);
@@ -178,6 +151,7 @@ int main(int argc, char ** argv)
     else if(test_type == "iterate_int")
     {
         std::vector<int64_t> keys = get_random_full_ints(num_keys);
+		RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys[i], value);
@@ -199,6 +173,7 @@ int main(int argc, char ** argv)
     else if(test_type == "find_existing_smallstring")
     {
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
+		RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
@@ -217,6 +192,7 @@ int main(int argc, char ** argv)
     {
 #ifdef FIND_STR_MISSING
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys*2);        
+		RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
@@ -234,6 +210,7 @@ int main(int argc, char ** argv)
     {
 #ifdef DELETE_STR
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
+		RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
@@ -261,6 +238,7 @@ int main(int argc, char ** argv)
     else if(test_type == "find_existing_string")
     {
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
+		RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_string_for_key(keys[i]), value);
@@ -279,6 +257,7 @@ int main(int argc, char ** argv)
     {
 #ifdef FIND_STR_MISSING
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys*2);
+		RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_string_for_key(keys[i]), value);
@@ -296,6 +275,7 @@ int main(int argc, char ** argv)
     {
 #ifdef DELETE_STR
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
+		RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_string_for_key(keys[i]), value);
