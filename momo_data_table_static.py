@@ -17,10 +17,10 @@ if len(sys.argv) > 1:
     benchtypes = sys.argv[1:]
 else:
     benchtypes = (
-                  'randomfull', 'randomfullread', 'randomfullreadmiss',
-                  'iteration',
-                  'insertsmallstring', 'readsmallstring', 'readsmallstringmiss',
-#                  'insertstring', 'readstring', 'readstringmiss',
+                  'insert_int', 'find_existing_int', 'find_missing_int',
+                  'iterate_int', 
+                  'insert_smallstring', 'find_existing_smallstring', 'find_missing_smallstring', 
+#                  'insert_string', 'find_existing_string', 'find_missing_string',
                   )
 
 for benchtype in benchtypes:
