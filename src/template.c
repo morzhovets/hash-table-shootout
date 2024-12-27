@@ -93,7 +93,7 @@ int main(int argc, char ** argv)
     else if(test_type == "find_existing_int")
     {
         std::vector<int64_t> keys = get_random_full_ints(num_keys);
-		RESERVE_INT(num_keys);
+        RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys[i], value);
@@ -114,7 +114,7 @@ int main(int argc, char ** argv)
         std::vector<int64_t> keys_insert = get_random_full_ints(num_keys, 0, std::numeric_limits<int64_t>::max());
         std::vector<int64_t> keys_read = get_random_full_ints(num_keys, std::numeric_limits<int64_t>::min(), -3);
         
-		RESERVE_INT(num_keys);
+        RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys_insert[i], value);
@@ -132,7 +132,7 @@ int main(int argc, char ** argv)
     {
 #ifdef DELETE_INT
         std::vector<int64_t> keys = get_random_full_ints(num_keys);
-		RESERVE_INT(num_keys);
+        RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys[i], value);
@@ -151,7 +151,7 @@ int main(int argc, char ** argv)
     else if(test_type == "iterate_int")
     {
         std::vector<int64_t> keys = get_random_full_ints(num_keys);
-		RESERVE_INT(num_keys);
+        RESERVE_INT(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_INT(keys[i], value);
@@ -173,7 +173,7 @@ int main(int argc, char ** argv)
     else if(test_type == "find_existing_smallstring")
     {
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
-		RESERVE_STR(num_keys);
+        RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
@@ -192,7 +192,7 @@ int main(int argc, char ** argv)
     {
 #ifdef FIND_STR_MISSING
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys*2);        
-		RESERVE_STR(num_keys);
+        RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
@@ -210,7 +210,7 @@ int main(int argc, char ** argv)
     {
 #ifdef DELETE_STR
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
-		RESERVE_STR(num_keys);
+        RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_small_string_for_key(keys[i]), value);
@@ -238,7 +238,7 @@ int main(int argc, char ** argv)
     else if(test_type == "find_existing_string")
     {
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
-		RESERVE_STR(num_keys);
+        RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_string_for_key(keys[i]), value);
@@ -257,7 +257,7 @@ int main(int argc, char ** argv)
     {
 #ifdef FIND_STR_MISSING
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys*2);
-		RESERVE_STR(num_keys);
+        RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_string_for_key(keys[i]), value);
@@ -275,7 +275,7 @@ int main(int argc, char ** argv)
     {
 #ifdef DELETE_STR
         std::vector<int64_t> keys = get_random_shuffle_range_ints(num_keys);
-		RESERVE_STR(num_keys);
+        RESERVE_STR(num_keys);
         for(int64_t i = 0; i < num_keys; i++)
         {
             INSERT_STR(get_string_for_key(keys[i]), value);
