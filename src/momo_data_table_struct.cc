@@ -1,6 +1,7 @@
 #include <inttypes.h>
 #include <string>
-#include "momo/DataTable.h"
+
+#include <momo/DataTable.h>
 
 struct Struct
 {

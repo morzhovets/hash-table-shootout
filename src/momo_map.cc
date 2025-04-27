@@ -1,6 +1,7 @@
 #include <inttypes.h>
 #include <string>
-#include "momo/stdish/map.h"
+
+#include <momo/stdish/map.h>
 
 typedef momo::stdish::map<int64_t, int64_t> map_t;
 typedef momo::stdish::map<std::string, int64_t> str_map_t;

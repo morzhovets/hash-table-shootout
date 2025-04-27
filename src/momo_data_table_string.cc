@@ -1,6 +1,7 @@
 #include <inttypes.h>
 #include <string>
-#include "momo/DataTable.h"
+
+#include <momo/DataTable.h>
 
 MOMO_DATA_COLUMN_STRING(int64_t, cIntKey);
 MOMO_DATA_COLUMN_STRING(std::string, cStrKey);
