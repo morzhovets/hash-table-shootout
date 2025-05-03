@@ -1,7 +1,7 @@
 #include <inttypes.h>
 #include <string>
 
-#include <momo/DataTable.h>
+#include "inc_data_table.h"
 
 struct StructInt
 {
