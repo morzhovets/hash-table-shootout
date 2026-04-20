@@ -5,10 +5,6 @@
 
 #undef MOMO_FRIENDS_SIZE_BEGIN_END_CONST
 #define MOMO_FRIENDS_SIZE_BEGIN_END_CONST(Class, ConstIterator) \
-	friend size_t size(const Class& object) noexcept \
-	{ \
-		return object.GetCount(); \
-	} \
 	friend ConstIterator begin(const Class& object) noexcept \
 	{ \
 		return object.GetBegin(); \
